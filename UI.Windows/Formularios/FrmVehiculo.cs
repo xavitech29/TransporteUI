@@ -95,6 +95,7 @@ namespace UI.Windows.Formularios
         private void pbGuardarVehiculo_Click(object sender, EventArgs e)
         {
             InsertarVehiculo();
+            Limpiar();
         }
 
         private void dgvListarVehiculos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -121,6 +122,51 @@ namespace UI.Windows.Formularios
                 //para utilizar en el combobox
                 //cboEstudiante.SelectedValue = dgvListaEstudiante.CurrentRow.Cells[8].Value;
             }
+        }
+
+        private void Limpiar()
+        {
+            txtIdVehiculo.Text = "";
+            txtPlaca.Text = "";
+            txtMarca.Text = "";
+            txtMotor.Text = "";
+            txtModelo.Text = "";
+            txtAnio.Text = "";
+            txtChasis.Text = "";
+            txtPasajeros.Text = "";
+            chkEstadoVehiculo.Checked = false;
+
+        }
+
+        private void EliminarVehiculo()
+        {
+            vehiculoVistaModelo = new VehiculoVistaModelo();
+            var IdVehiculo = int.Parse(txtIdVehiculo.Text == "" ? "0" : txtIdVehiculo.Text);
+            vehiculoVistaModelo.Id_vehiculo = IdVehiculo;
+
+            if (vehiculoControlador.EliminarVehiculo(vehiculoVistaModelo) && IdVehiculo > 0)
+            {
+                MessageBox.Show("Vehiculo Eliminado!!");
+
+                ListarVehiculos();
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Error. Vehiculo No Eliminado!!");
+
+            }
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro de eliminar este Vehiculo?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                EliminarVehiculo();
+                Limpiar();
+            }
+
         }
     }
 }

@@ -97,5 +97,21 @@ namespace UI.Windows.ControladoresAplicacion
                 return null; 
             }
         }
+        public bool EliminarVehiculo(VehiculoVistaModelo eliminarVehiculoVM)
+        {
+            try
+            {
+
+                vehiculoServices.EliminarVehiculo(eliminarVehiculoVM.Id_vehiculo);
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
     }
 }

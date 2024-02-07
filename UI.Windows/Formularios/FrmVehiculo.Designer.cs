@@ -48,6 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListarVehiculos = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuardarVehiculo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarVehiculos)).BeginInit();
@@ -55,6 +56,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.txtIdVehiculo);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.pbGuardarVehiculo);
@@ -82,7 +84,7 @@
             // txtIdVehiculo
             // 
             this.txtIdVehiculo.Enabled = false;
-            this.txtIdVehiculo.Location = new System.Drawing.Point(327, 27);
+            this.txtIdVehiculo.Location = new System.Drawing.Point(238, 20);
             this.txtIdVehiculo.Name = "txtIdVehiculo";
             this.txtIdVehiculo.Size = new System.Drawing.Size(100, 20);
             this.txtIdVehiculo.TabIndex = 18;
@@ -90,7 +92,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(280, 27);
+            this.label8.Location = new System.Drawing.Point(192, 23);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 13);
             this.label8.TabIndex = 17;
@@ -99,7 +101,7 @@
             // pbGuardarVehiculo
             // 
             this.pbGuardarVehiculo.Image = global::UI.Windows.Properties.Resources.guardar1;
-            this.pbGuardarVehiculo.Location = new System.Drawing.Point(211, 20);
+            this.pbGuardarVehiculo.Location = new System.Drawing.Point(508, 23);
             this.pbGuardarVehiculo.Name = "pbGuardarVehiculo";
             this.pbGuardarVehiculo.Size = new System.Drawing.Size(42, 41);
             this.pbGuardarVehiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -241,6 +243,16 @@
             this.dgvListarVehiculos.TabIndex = 1;
             this.dgvListarVehiculos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListarVehiculos_CellMouseDoubleClick);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(493, 98);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // FrmVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,5 +295,6 @@
         private System.Windows.Forms.PictureBox pbGuardarVehiculo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtIdVehiculo;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
