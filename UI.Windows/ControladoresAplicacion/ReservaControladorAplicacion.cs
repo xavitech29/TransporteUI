@@ -95,5 +95,21 @@ namespace UI.Windows.ControladoresAplicacion
                 return null; 
             }
         }
+
+        public bool EliminarReserva(ReservaVistaModelo eliminarReservaVM)
+        {
+            try
+            {
+
+                reservaServices.EliminarReserva(eliminarReservaVM.Id_reserva);
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
     }
 }

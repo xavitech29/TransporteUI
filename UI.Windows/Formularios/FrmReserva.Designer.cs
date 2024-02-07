@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pbGuardarReserva = new System.Windows.Forms.PictureBox();
+            this.cboReservaVehiculo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtIdReserva = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cboReservaRuta = new System.Windows.Forms.ComboBox();
@@ -41,16 +44,15 @@
             this.dateTimePickerHoraReserva = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFechaReserva = new System.Windows.Forms.DateTimePicker();
             this.dgvListarReserva = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboReservaVehiculo = new System.Windows.Forms.ComboBox();
-            this.pbGuardarReserva = new System.Windows.Forms.PictureBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListarReserva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuardarReserva)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListarReserva)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.pbGuardarReserva);
             this.groupBox1.Controls.Add(this.cboReservaVehiculo);
             this.groupBox1.Controls.Add(this.label6);
@@ -70,6 +72,34 @@
             this.groupBox1.Size = new System.Drawing.Size(727, 227);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // pbGuardarReserva
+            // 
+            this.pbGuardarReserva.Image = global::UI.Windows.Properties.Resources.guardar1;
+            this.pbGuardarReserva.Location = new System.Drawing.Point(653, 29);
+            this.pbGuardarReserva.Name = "pbGuardarReserva";
+            this.pbGuardarReserva.Size = new System.Drawing.Size(48, 48);
+            this.pbGuardarReserva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbGuardarReserva.TabIndex = 15;
+            this.pbGuardarReserva.TabStop = false;
+            this.pbGuardarReserva.Click += new System.EventHandler(this.pbGuardarReserva_Click);
+            // 
+            // cboReservaVehiculo
+            // 
+            this.cboReservaVehiculo.FormattingEnabled = true;
+            this.cboReservaVehiculo.Location = new System.Drawing.Point(385, 86);
+            this.cboReservaVehiculo.Name = "cboReservaVehiculo";
+            this.cboReservaVehiculo.Size = new System.Drawing.Size(121, 21);
+            this.cboReservaVehiculo.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(326, 88);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Vehiculo";
             // 
             // txtIdReserva
             // 
@@ -181,33 +211,15 @@
             this.dgvListarReserva.TabIndex = 1;
             this.dgvListarReserva.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListarReserva_CellMouseDoubleClick);
             // 
-            // label6
+            // btnEliminar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(326, 88);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Vehiculo";
-            // 
-            // cboReservaVehiculo
-            // 
-            this.cboReservaVehiculo.FormattingEnabled = true;
-            this.cboReservaVehiculo.Location = new System.Drawing.Point(385, 86);
-            this.cboReservaVehiculo.Name = "cboReservaVehiculo";
-            this.cboReservaVehiculo.Size = new System.Drawing.Size(121, 21);
-            this.cboReservaVehiculo.TabIndex = 14;
-            // 
-            // pbGuardarReserva
-            // 
-            this.pbGuardarReserva.Image = global::UI.Windows.Properties.Resources.guardar1;
-            this.pbGuardarReserva.Location = new System.Drawing.Point(653, 29);
-            this.pbGuardarReserva.Name = "pbGuardarReserva";
-            this.pbGuardarReserva.Size = new System.Drawing.Size(48, 48);
-            this.pbGuardarReserva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbGuardarReserva.TabIndex = 15;
-            this.pbGuardarReserva.TabStop = false;
-            this.pbGuardarReserva.Click += new System.EventHandler(this.pbGuardarReserva_Click);
+            this.btnEliminar.Location = new System.Drawing.Point(646, 110);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // FrmReserva
             // 
@@ -223,8 +235,8 @@
             this.Load += new System.EventHandler(this.FrmReserva_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListarReserva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuardarReserva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListarReserva)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +259,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboReservaVehiculo;
         private System.Windows.Forms.PictureBox pbGuardarReserva;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

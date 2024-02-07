@@ -137,9 +137,52 @@ namespace UI.Windows.Formularios
             }
         }
 
+
         private void pbGuardarReserva_Click(object sender, EventArgs e)
         {
             InsertarReserva();
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+            txtIdReserva.Text = "";
+            dateTimePickerFechaReserva.Text = "";
+            dateTimePickerHoraReserva.Text = "";
+            cboReservaEstudiante.SelectedValue = ""; 
+            cboReservaRuta.SelectedValue = ""; 
+            cboReservaVehiculo.SelectedValue = "";
+            chkEstadoReserva.Checked = false;
+        }
+
+        private void EliminarReserva()
+        {
+            reservaVistaModelo = new ReservaVistaModelo();
+            var IdReserva = int.Parse(txtIdReserva.Text == "" ? "0" : txtIdReserva.Text);
+            reservaVistaModelo.Id_reserva = IdReserva;
+
+            if (reservaControlador.EliminarReserva(reservaVistaModelo) && IdReserva > 0)
+            {
+                MessageBox.Show("Reserva Dado de Baja!!");
+
+                ListarReservas();
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Error. Reserva No Dado de Baja!!");
+
+            }
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro de eliminar esta Reserva?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                EliminarReserva();
+                Limpiar();
+            }
         }
     }
 }
