@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ec399d1217d14214961f895f82bea98d" Name="Diagram1">
+        <EntityTypeShape EntityType="TransporteDBModel.Estudiante" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TransporteDBModel.Historial" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="TransporteDBModel.Reserva" Width="1.5" PointX="6" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TransporteDBModel.Ruta" Width="1.5" PointX="3.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TransporteDBModel.Vehiculo" Width="1.5" PointX="3.75" PointY="11.375" IsExpanded="true" />
+        <AssociationConnector Association="TransporteDBModel.FK_Estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="TransporteDBModel.FK_Historial_Estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="TransporteDBModel.FK_Historial_Ruta" ManuallyRouted="false" />
+        <AssociationConnector Association="TransporteDBModel.FK_Reserva_Vehiculo" ManuallyRouted="false" />
+        <AssociationConnector Association="TransporteDBModel.FK_Ruta" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
