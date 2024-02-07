@@ -101,7 +101,9 @@ namespace UI.Windows.Formularios
         {
         
                 InsertarHistorial();
-            
+                Limpiar();
+
+
         }
 
         private void dgvHistorial_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -113,6 +115,45 @@ namespace UI.Windows.Formularios
                 dateTimePickerHistorial.Text = dgvHistorial.CurrentRow.Cells[1].Value.ToString();           
                 cboRuta.SelectedValue = dgvHistorial.CurrentRow.Cells[2].Value;
                 cboEstudiante.SelectedValue = dgvHistorial.CurrentRow.Cells[3].Value;
+            }
+        }
+
+        private void Limpiar()
+        {
+            txtIdHistorial.Text = "";
+            cboRuta.SelectedValue = "";
+            cboEstudiante.SelectedValue = "";
+        }
+
+        private void EliminarHistorial()
+        {
+            historialVistaModelo = new HistorialVistaModelo();
+            var IdHistorial = int.Parse(txtIdHistorial.Text == "" ? "0" : txtIdHistorial.Text);
+            historialVistaModelo.Id_historial = IdHistorial;
+
+            if (historialControlador.EliminarHistorial(historialVistaModelo) && IdHistorial > 0)
+            {
+                MessageBox.Show("Historial Dado de Baja!!");
+
+                ListarHistoriales();
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Error. Historial No Dado de Baja!!");
+
+            }
+        }
+
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro de eliminar Historial?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                EliminarHistorial();
+                Limpiar();
             }
         }
     }

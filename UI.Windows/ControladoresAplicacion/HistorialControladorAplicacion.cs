@@ -89,5 +89,22 @@ namespace UI.Windows.ControladoresAplicacion
                 return null; 
             }
         }
+
+        public bool EliminarHistorial(HistorialVistaModelo eliminarHistorialVM)
+        {
+            try
+            {
+
+                historialServices.EliminarHistorial(eliminarHistorialVM.Id_historial);
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
     }
 }

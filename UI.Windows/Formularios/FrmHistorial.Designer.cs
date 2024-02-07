@@ -39,6 +39,7 @@
             this.txtIdHistorial = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pbGuardarHistorial = new System.Windows.Forms.PictureBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuardarHistorial)).BeginInit();
@@ -109,6 +110,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.txtIdHistorial);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.pbGuardarHistorial);
@@ -144,13 +146,23 @@
             // pbGuardarHistorial
             // 
             this.pbGuardarHistorial.Image = global::UI.Windows.Properties.Resources.guardar1;
-            this.pbGuardarHistorial.Location = new System.Drawing.Point(492, 107);
+            this.pbGuardarHistorial.Location = new System.Drawing.Point(481, 43);
             this.pbGuardarHistorial.Name = "pbGuardarHistorial";
             this.pbGuardarHistorial.Size = new System.Drawing.Size(40, 36);
             this.pbGuardarHistorial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbGuardarHistorial.TabIndex = 8;
             this.pbGuardarHistorial.TabStop = false;
             this.pbGuardarHistorial.Click += new System.EventHandler(this.pbGuardarHistorial_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(457, 107);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // FrmHistorial
             // 
@@ -185,5 +197,6 @@
         private System.Windows.Forms.PictureBox pbGuardarHistorial;
         private System.Windows.Forms.TextBox txtIdHistorial;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
