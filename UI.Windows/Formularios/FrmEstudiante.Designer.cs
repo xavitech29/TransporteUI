@@ -46,6 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvListaEstudiante = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaEstudiante)).BeginInit();
@@ -62,6 +63,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.txtIdEstudiante);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.pbGuardar);
@@ -223,6 +225,16 @@
             this.dgvListaEstudiante.TabIndex = 2;
             this.dgvListaEstudiante.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListaEstudiante_CellMouseDoubleClick);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(302, 112);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // FrmEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,5 +275,6 @@
         private System.Windows.Forms.PictureBox pbGuardar;
         private System.Windows.Forms.TextBox txtIdEstudiante;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

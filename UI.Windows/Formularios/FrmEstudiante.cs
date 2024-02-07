@@ -119,6 +119,7 @@ namespace UI.Windows.Formularios
         private void pbGuardar_Click(object sender, EventArgs e)
         {
             InsertarEstudiante();
+            Limpiar();
         }
 
         private void dgvListaEstudiante_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -143,6 +144,49 @@ namespace UI.Windows.Formularios
                 }
                 //para utilizar en el combobox
                 //cboEstudiante.SelectedValue = dgvListaEstudiante.CurrentRow.Cells[8].Value;
+            }
+        }
+
+        private void Limpiar()
+        {
+            txtIdEstudiante.Text = "";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtCedula.Text = "";
+            txtDireccion.Text = "";
+            txtEmail.Text = "";
+            txtCelular.Text = "";
+            chkEstado.Checked = false;
+        }
+
+        private void EliminarEstudiante()
+        {
+            estudianteVistaModelo = new EstudianteVistaModelo();
+            var IdEstudiante = int.Parse(txtIdEstudiante.Text == "" ? "0" : txtIdEstudiante.Text);
+            estudianteVistaModelo.Id_estudiante = IdEstudiante;
+
+            if (estudianteControlador.EliminarEstudiante(estudianteVistaModelo) && IdEstudiante > 0)
+            {
+                MessageBox.Show("Estudiante Eliminado!!");
+
+                ListarEstudiantes();
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Error. Estudiante No Eliminado!!");
+
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro de eliminar este Estudiante?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                EliminarEstudiante();
+                Limpiar();
             }
         }
     }

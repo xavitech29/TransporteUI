@@ -95,6 +95,23 @@ namespace UI.Windows.ControladoresAplicacion
             }
         }
 
-        
+        public bool EliminarEstudiante(EstudianteVistaModelo eliminarEstudianteVM)
+        {
+            try
+            {
+
+                estudianteServices.EliminarEstudiante(eliminarEstudianteVM.Id_estudiante);
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+
+
     }
 }
