@@ -92,5 +92,22 @@ namespace UI.Windows.ControladoresAplicacion
                 return null; 
             }
         }
+
+        public bool EliminarRuta(RutaVistaModelo eliminarRutaVM)
+        {
+            try
+            {
+
+                rutaServices.EliminarRuta(eliminarRutaVM.Id_ruta);
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
     }
 }

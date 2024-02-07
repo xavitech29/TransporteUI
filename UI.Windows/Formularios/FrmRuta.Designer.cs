@@ -47,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvListarRutas = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuardarRuta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarRutas)).BeginInit();
@@ -63,6 +64,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.txtIdRuta);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.pbGuardarRuta);
@@ -237,6 +239,16 @@
             this.dgvListarRutas.TabIndex = 2;
             this.dgvListarRutas.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListarRutas_CellMouseDoubleClick);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(343, 87);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 21;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // FrmRuta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,5 +290,6 @@
         private System.Windows.Forms.PictureBox pbGuardarRuta;
         private System.Windows.Forms.TextBox txtIdRuta;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -84,7 +84,9 @@ namespace UI.Windows.Formularios
         private void pbGuardarRuta_Click(object sender, EventArgs e)
         {           
                 InsertarRuta();
-            
+                Limpiar();
+
+
         }
 
         private void FrmRuta_Load(object sender, EventArgs e)
@@ -107,8 +109,51 @@ namespace UI.Windows.Formularios
                 dateTimePickerFechaRuta.Text = dgvListarRutas.CurrentRow.Cells[6].Value.ToString();
                 txtCapacidad.Text = dgvListarRutas.CurrentRow.Cells[7].Value.ToString();
 
-                
+            }
+        }
 
+        private void Limpiar()
+        {
+            txtIdRuta.Text = "";
+            txtNombreRuta.Text = "";
+            txtOrigen.Text = "";
+            txtDestino.Text = "";
+            dateTimePickerSalida.Text = "";
+            dateTimePickerLlegada.Text = "";
+            dateTimePickerFechaRuta.Text = "";
+            txtCapacidad.Text = "";
+
+        }
+
+        private void EliminarRuta()
+        {
+            rutaVistaModelo = new RutaVistaModelo();
+            var IdRuta = int.Parse(txtIdRuta.Text == "" ? "0" : txtIdRuta.Text);
+            rutaVistaModelo.Id_ruta = IdRuta;
+
+            if (rutaControlador.EliminarRuta(rutaVistaModelo) && IdRuta > 0)
+            {
+                MessageBox.Show("Ruta Dado de Baja!!");
+
+                ListarRutas();
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Error. Ruta No Dado de Baja!!");
+
+            }
+        }
+        
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro de eliminar esta Ruta?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                EliminarRuta();
+                Limpiar();
             }
         }
     }
