@@ -12,5 +12,5 @@ Los cambios debes hacerlos en las carpetas de **Infraestructura.AccesoDatos** y 
 
    ```xml
    <connectionStrings>
-		<add name="LABEntities" connectionString="metadata=res://*/Model_LAB.csdl|res://*/Model_LAB.ssdl|res://*/Model_LAB.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-VJM26SD\SQLEXPRESS;initial catalog=LAB;integrated security=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
-	</connectionStrings>
+    <add name="TransporteDBEntities" connectionString="metadata=res://*/Model_Transporte.csdl|res://*/Model_Transporte.ssdl|res://*/Model_Transporte.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-VJM26SD\SQLEXPRESS;initial catalog=TransporteDB;integrated security=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+  </connectionStrings>
